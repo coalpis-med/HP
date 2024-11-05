@@ -3,23 +3,34 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Sofa, Eye, ArrowLeft } from 'lucide-react';
 import Link from 'next/link';
+import Image from 'next/image';
+import freeImage from './free.jpg';
 
+import spaceImage from './space.jpg';
+import kaguImage from './kagu.jpg';
 export default function VRFurnitureWorks() {
   const projects = [
     {
-      title: "リビングルームのVR配置",
-      description: "リビングルームに家具を配置し、VRでシミュレーション。",
+      title: "自由自在な移動空間の再現",
+      description: "6dofに対応。ハンドトラッキングを用い、手の動きを使うことで直感的に空間を移動。",
       icon: <Sofa className="w-6 h-6" />,
-      image: "/api/placeholder/800/600",
-      link: "/works/vr-furniture/living-room"
+      image: freeImage,
+      link: "/works/vr-furniture/free"
     },
     {
-      title: "オフィスのVR配置",
+      title: "空間の再現",
       description: "オフィススペースに家具を配置し、VRでシミュレーション。",
       icon: <Sofa className="w-6 h-6" />,
-      image: "/api/placeholder/800/600",
-      link: "/works/vr-furniture/office"
-    }
+      image: spaceImage,
+      link: "/works/vr-furniture/space"
+    },
+    {
+      title: "家具の配置",
+      description: "家具の詳細をVRで確認し、購入を検討。",
+      icon: <Sofa className="w-6 h-6" />,
+      image: kaguImage,
+      link: "/works/vr-furniture/furniture"
+    },
   ];
 
   return (
@@ -80,7 +91,7 @@ export default function VRFurnitureWorks() {
                     href={project.link}
                     className="inline-flex items-center space-x-2 text-blue-400 hover:text-blue-300 transition-colors"
                   >
-                    <span>実物を見る</span>
+                    <span>さらに詳しく</span>
                     <Eye className="w-4 h-4" />
                   </Link>
                 </div>
@@ -88,7 +99,7 @@ export default function VRFurnitureWorks() {
                 <div className={`relative ${index % 2 === 1 ? 'md:col-start-1' : ''}`}>
                   <div className="relative overflow-hidden rounded-xl aspect-[4/3] group-hover:shadow-2xl transition-shadow duration-300">
                     <img
-                      src={project.image}
+                      src={typeof project.image === 'string' ? project.image : project.image.src}
                       alt={project.title}
                       className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700"
                     />

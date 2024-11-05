@@ -1,18 +1,18 @@
-//
 "use client"
 
 import { useState } from "react"
 import { AnimatePresence, motion } from "framer-motion"
 import { ArrowRight, Facebook, Instagram, Twitter, Youtube } from "lucide-react"
-import { Button } from "@/components//ui/button"
+import { Button } from "@/components/ui/button"
 import { IntroAnimation } from "./components/intro-animation"
 import { Navigation } from "./components/navigation"
 import { ServiceCard } from "./components/service-card"
+import { Footer } from "./components/Footer" // Footer コンポーネントをインポート
 import Image from "next/image"
 import Link from "next/link"
 
 export default function Home() {
-  const [currentYear] = useState(new Date().getFullYear())
+  const currentYear = new Date().getFullYear()
   const [introComplete, setIntroComplete] = useState(false)
 
   return (
@@ -45,35 +45,18 @@ export default function Home() {
                 <h2 className="text-6xl font-bold mb-4 text-white">COLAPIS</h2>
                 <h3 className="text-4xl font-bold mb-6">3Dテクノロジーで未来を創造する</h3>
                 <p className="text-xl mb-8">最先端の3Dモデリング、VR技術、360°コンテンツで、あなたのビジョンを実現します。</p>
-                <Button size="lg" className="group">
-                  詳しく見る
-                  <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
-                </Button>
+                <Link href="/works">
+                  <Button size="lg" className="group">
+                    詳しく見る
+                    <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
+                  </Button>
+                </Link>
               </motion.div>
             </div>
           </div>
         </header>
 
-        {/* Services Section */}
-        <section id="works" className="py-24 bg-zinc-900">
-          <div className="container mx-auto px-4">
-            <h2 className="text-3xl font-bold mb-12 text-center">サービス</h2>
-            <div className="grid md:grid-cols-3 gap-8">
-              <ServiceCard
-                title="3Dモデリング"
-                description="様々な技術を用いた3Dオブジェクトの作成。"
-              />
-              <ServiceCard
-                title="VR内見システム"
-                description="VR空間内で自由に建物内の内見を可能としたシステム。"
-              />
-              <ServiceCard
-                title="高画質360°3Dコンテンツ"
-                description="VR機器で再生可能な高画質映像、写真の制作。"
-              />
-            </div>
-          </div>
-        </section>
+       
 
         {/* News Section */}
         <section id="news" className="py-24 bg-black">
@@ -108,43 +91,7 @@ export default function Home() {
         </section>
 
         {/* Footer */}
-        <footer className="bg-zinc-900 py-12">
-          <div className="container mx-auto px-4">
-            <div className="grid md:grid-cols-4 gap-8 mb-8">
-              <div>
-                <h3 className="font-bold mb-4">ABOUT</h3>
-                <p>会社概要</p>
-              </div>
-              <div>
-                <h3 className="font-bold mb-4">WORKS</h3>
-                <ul className="space-y-2">
-                  <li>3Dモデリング</li>
-                  <li>VR家具配置システム</li>
-                  <li>高画質360°3Dコンテンツ</li>
-                  <li>その他</li>
-                </ul>
-              </div>
-              <div>
-                <h3 className="font-bold mb-4">NEWS</h3>
-                <p>最新情報</p>
-              </div>
-              <div>
-                <h3 className="font-bold mb-4">CONTACT</h3>
-                <p>問い合わせ</p>
-              </div>
-            </div>
-            <div className="flex justify-center space-x-6 mb-8">
-              <Facebook className="h-6 w-6 hover:text-blue-500 transition-colors" />
-              <Twitter className="h-6 w-6 hover:text-blue-400 transition-colors" />
-              <Instagram className="h-6 w-6 hover:text-pink-500 transition-colors" />
-              <Youtube className="h-6 w-6 hover:text-red-500 transition-colors" />
-            </div>
-            <div className="text-center text-sm text-zinc-400">
-              <p>© {currentYear} COLAPIS All Rights Reserved.</p>
-              <p>《Web Design:Template-Party》</p>
-            </div>
-          </div>
-        </footer>
+     
       </motion.div>
     </div>
   )

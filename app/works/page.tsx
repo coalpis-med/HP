@@ -11,7 +11,7 @@ export default function Works() {
       id: '3d-modeling',
       title: '3Dモデリング',
       icon: <Package className="w-8 h-8" />,
-      description: '高品質な3Dモデルの制作により、製品やコンセプトを立体的に表現。建築、製品デザイン、キャラクターなど、幅広い分野で活用可能なモデリングサービスを提供。',
+      description: '高品質な3Dモデルの制作により、製品やコンセプトを立体的に表現。建築、製品デザインなど、幅広い分野で活用可能なモデリングサービスを提供。',
       gradient: 'from-blue-500 to-purple-500',
       href: '/works/3d-modeling'
     },
@@ -27,7 +27,7 @@ export default function Works() {
       id: '360-content',
       title: '360°3Dコンテンツ',
       icon: <View className="w-8 h-8" />,
-      description: '没入感のある360度3D体験を提供。バーチャルツアー、展示会、不動産内覧など、様々なシーンで活用できるインタラクティブコンテンツを制作。',
+      description: '没入感のある360度3D体験を提供。バーチャルツアー、不動産内覧など、様々なシーンで活用できるインタラクティブコンテンツを制作。',
       gradient: 'from-pink-500 to-red-500',
       href: '/works/360-content'
     },
@@ -35,7 +35,7 @@ export default function Works() {
       id: 'other-works',
       title: 'その他',
       icon: <LayoutGrid className="w-8 h-8" />,
-      description: 'AR開発、カスタムビジュアライゼーション、インタラクティブWebコンテンツなど、最新技術を活用した多様なデジタルソリューションを提供。',
+      description: 'アプリ開発、IOT,3Dプリンターなど最新技術を活用した多様なデジタルソリューションを提供。',
       gradient: 'from-red-500 to-orange-500',
       href: '/works/other-works'
     }

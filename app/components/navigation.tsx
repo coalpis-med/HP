@@ -21,6 +21,7 @@ const NAV_ITEMS = [
   },
   { href: "/news", label: "NEWS" },
   { href: "/teams", label: "TEAMS" },
+  { href: "/contact", label: "CONTACT" },
 ];
 
 const navMotion = {
